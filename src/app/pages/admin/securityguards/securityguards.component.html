@@ -1,0 +1,107 @@
+<mat-card style="margin-top: 2px;">
+    <mat-card-header>
+        <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+            <h2><b>Security Guards</b></h2>
+        </div>
+        <div class="col">
+       <button (click)="opendialog()" mat-raised-button color="accent">
+            Add Security Guard
+       </button>
+    </div>
+    
+        </div>
+    </div>
+       
+    </mat-card-header>
+    <mat-card-content>
+
+        <!-- <div class="container-fluid">
+            
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="guards" class="mat-elevation-z8">
+          
+              <!-- Define the columns -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let guard">{{ guard.name }}</td>
+              </ng-container>
+          
+              <ng-container matColumnDef="username">
+                <th mat-header-cell *matHeaderCellDef>Username</th>
+                <td mat-cell *matCellDef="let guard">{{ guard.username }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="address">
+                <th mat-header-cell *matHeaderCellDef>Address</th>
+                <td mat-cell *matCellDef="let guard">{{ guard.address }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="contact">
+                <th mat-header-cell *matHeaderCellDef>Contact</th>
+                <td mat-cell *matCellDef="let guard">{{ guard.contact }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef>Actions</th>
+                <td mat-cell *matCellDef="let guard">
+                  <button mat-icon-button color="primary" (click)="openUpdateDialog(guard)">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button mat-icon-button color="warn" (click)="deleteGuard(guard)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </td>
+              </ng-container>
+          
+              <!-- Add more columns as needed -->
+          
+              <!-- Table rows -->
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+       
+    </mat-card-content>
+   
+   </mat-card>
+   

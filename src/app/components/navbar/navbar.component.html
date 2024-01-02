@@ -1,0 +1,40 @@
+<mat-toolbar color="primary">
+
+    <nav>
+      <a *ngIf="!login.isLoggedIn()" routerLink="/" mat-button routerLink="" ><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>Home</a>
+      <a *ngIf="!login.isLoggedIn()" mat-button routerLink="/login" ><mat-icon aria-hidden="false" aria-label="Example login icon" fontIcon="login"></mat-icon>Login</a>
+      <a *ngIf="!login.isLoggedIn()" mat-button routerLink="/signup"><mat-icon aria-hidden="false" aria-label="Example register icon" fontIcon="account_box"></mat-icon>Signup</a>
+      <!-- <button *ngIf="login.getUserRole()=='ADMIN'" mat-icon-button  ><mat-icon  (click)="sidenav.toggle();">menu</mat-icon></button> -->
+      <a mat-button><mat-icon aria-hidden="false" aria-label="Example account_circle icon" fontIcon="account_circle"></mat-icon>{{login.getUser().username}}</a>
+      
+      <a (click)="logout()" *ngIf="login.isLoggedIn()" mat-button routerLink="/logout" ><mat-icon aria-hidden="false" aria-label="Example logout icon" fontIcon="logout"></mat-icon>Logout</a>
+    </nav>
+  
+  </mat-toolbar>
+  <ng-confirm></ng-confirm>
+ 
+<!-- <mat-drawer-container>
+
+
+  <mat-sidenav #sidenav [opened]="true" mode="side">
+    <mat-nav-list>
+
+      <button mat-list-item routerLink="/admin">
+        <mat-icon matListItemIcon>home</mat-icon>Home
+    </button>
+    <button mat-list-item routerLink="profile">
+        <mat-icon matListItemIcon>account_circle</mat-icon>Profile
+    </button>
+
+    </mat-nav-list>
+    <mat-sidenav-content>
+      <p>hi</p>
+    </mat-sidenav-content>
+    
+</mat-sidenav>
+</mat-drawer-container> -->
+    
+
+    <!-- <mat-sidenav-content>
+
+    </mat-sidenav-content> -->

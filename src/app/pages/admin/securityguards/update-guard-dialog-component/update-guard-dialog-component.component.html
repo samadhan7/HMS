@@ -1,0 +1,76 @@
+
+<div class="container" style="margin-top: 40px;">
+
+    <div class="row justify-content-center">
+        
+      
+                
+      <!-- {{securitySignUpData | json}} -->
+      <form (ngSubmit)="formSubmit()" [formGroup]="updateSecurityGuardForm" class="text-center col-md-12">
+        <h2 class="col-md-12">Update Security Guard</h2>
+
+        <p>
+            <mat-form-field class="col-md-4" appearance="outline">
+              <mat-label>Name</mat-label>
+              <input formControlName="name" type="text" name="name" matInput placeholder="Enter name" required>
+            </mat-form-field>
+          </p>
+
+        <p>
+          <mat-form-field class="col-md-4" appearance="outline">
+              <mat-label>Address</mat-label>
+              <input formControlName="address" type="text" name="address" matInput placeholder="Enter address" required>
+          </mat-form-field>
+      </p>
+
+        <p>
+            <mat-form-field class="col-md-4" appearance="outline">
+                <mat-label>Contact</mat-label>
+                <input formControlName="contact" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                 type="number" name="contact" matInput placeholder="Enter phone number" [maxLength]="10" required>
+            </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field class="col-md-4" appearance="outline">
+            <mat-label>Email(username)</mat-label>
+            <input formControlName="username" type="email" name="username" matInput placeholder="Enter username" required>
+          </mat-form-field>
+        </p>
+  
+        <p>
+          <mat-form-field class="col-md-4" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" name="password" type="password" matInput placeholder="Enter Password" required>
+          </mat-form-field>
+        </p>
+
+        <p>
+            <mat-form-field class="col-md-4" appearance="outline">
+              <mat-label>Confirm Password</mat-label>
+              <input formControlName="confirmPassword" name="con_password"  matInput [type]="showPassword ? 'text' : 'password'" placeholder="Re enter Password" required>
+                <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                  {{showPassword?'visibility_off':'visibility'}}
+                </mat-icon>
+                <mat-hint style="color: red;" *ngIf="updateSecurityGuard.password !== conPass.confirmPassword">Passwords do not match</mat-hint>
+            </mat-form-field>
+           
+          </p>
+          
+  
+        <div class="row justify-content-center">
+            
+                
+                    <button mat-raised-button class="col-md-2" color="primary" type="submit">
+                        <mat-icon aria-hidden="false" aria-label="Example register icon" fontIcon="account_box"></mat-icon>Update</button>
+                    <div class="col-md-1"></div>
+                    <button mat-raised-button class="col-md-2" type="reset">Reset</button>
+                
+        
+        </div>
+  
+      </form>
+  
+    </div>
+  
+  </div>

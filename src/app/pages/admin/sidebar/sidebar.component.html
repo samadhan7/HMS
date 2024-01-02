@@ -1,0 +1,48 @@
+
+<mat-card style="margin-top: 2px;">
+    <mat-card-content>
+<mat-action-list>
+    <button mat-list-item routerLink="/admin">
+        <mat-icon matListItemIcon>home</mat-icon>Home
+    </button>
+    <button mat-list-item routerLink="profile">
+        <mat-icon matListItemIcon>account_circle</mat-icon>Profile
+    </button>
+    <button mat-list-item [matMenuTriggerFor]="dropdownMenu">
+        <mat-icon matListItemIcon>menu</mat-icon>Dropdown
+    </button>
+    <button mat-list-item routerLink="booking">
+        <mat-icon matListItemIcon>book</mat-icon>Booking
+    </button>
+    <button mat-list-item routerLink="guards">
+        <mat-icon matListItemIcon>security</mat-icon>security-guard
+    </button>
+    <mat-menu #dropdownMenu="matMenu">
+        <button mat-menu-item>
+          <span mat-list-item-title>Option 1</span>
+          <span mat-list-item-line>Some description</span>
+        </button>
+        <button mat-menu-item>
+          <span mat-list-item-title>Option 2</span>
+          <span mat-list-item-line>Another description</span>
+        </button>
+    </mat-menu>
+</mat-action-list>
+</mat-card-content>
+</mat-card>
+
+
+
+<!-- <mat-sidenav-container>
+
+    <mat-sidenav #sidenav>
+        <button mat-list-item routerLink="/admin">
+            <mat-icon matListItemIcon>home</mat-icon>Home
+        </button>
+        <button mat-list-item routerLink="profile">
+            <mat-icon matListItemIcon>account_circle</mat-icon>Profile
+        </button>
+    </mat-sidenav>
+
+    
+</mat-sidenav-container> -->
